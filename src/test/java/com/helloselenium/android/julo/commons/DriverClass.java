@@ -18,7 +18,7 @@ public class DriverClass {
 
 	public MobileDriver mobileDriver;
 
-	public MobileDriver getAndroidDriver() {
+	public MobileDriver getAndroidDriver(String deviceName) {
 		try {
 			String testServer = AppConfig.INSTANCE.get("testServer");
 			File app = new File("resources", AppConfig.INSTANCE.get("app"));
@@ -38,8 +38,7 @@ public class DriverClass {
 				mobileDriver = new AndroidDriver(new URL(AppConfig.INSTANCE.get("appiumServer")), capabilities);
 			} else if (testServer.equalsIgnoreCase("testobject")) {
 				capabilities.setCapability("testobject_api_key", AppConfig.INSTANCE.get("testobject_api_key"));
-				// capabilities.setCapability("testobject_device",
-				// AppConfig.INSTANCE.get("testobject_device"));
+				capabilities.setCapability("testobject_device", deviceName);
 				capabilities.setCapability("testobject_test_name", AppConfig.INSTANCE.get("testobject_test_name"));
 				mobileDriver = new AndroidDriver(new URL(AppConfig.INSTANCE.get("testObject_appium_server")),
 						capabilities);

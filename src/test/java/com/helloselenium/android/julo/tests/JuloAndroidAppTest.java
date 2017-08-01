@@ -17,7 +17,7 @@ public class JuloAndroidAppTest extends AbstractBaseTest {
 
 	@Test(priority = 1, enabled = true)
 	public void signUp() {
-		initAndroidDriver();
+		initAndroidDriver("Motorola Moto E (2nd gen) Free");
 		SplashScreen.skip();
 		SignUpScreen.openSignUpOption1();
 		SignUpScreen.clickFillOutTheFormButton();
@@ -29,18 +29,14 @@ public class JuloAndroidAppTest extends AbstractBaseTest {
 	}
 
 	@Test(priority = 2, enabled = true)
-	public void confirmAccount() {
+	public void confirmAccountAndUploadDocuments() {
 		EmailConfirmation.confirmEmail(TestData.INSTANCE.get("email"));
 		try {
 			Thread.sleep(60000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-	}
-
-	@Test(priority = 3, enabled = true)
-	public void uploadDocuments() {
-		initAndroidDriver();
+		initAndroidDriver("LG Nexus 5X Free");
 		SplashScreen.skip();
 		LoginScreen.openLoginScreen();
 		LoginScreen.login(TestData.INSTANCE.get("email"), TestData.INSTANCE.get("password"));

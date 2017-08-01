@@ -14,8 +14,8 @@ public abstract class AbstractBaseTest {
 		driverClass = new DriverClass();
 	}
 
-	protected void initAndroidDriver() {
-		this.getAndroidDriver = (AppiumDriver) driverClass.getAndroidDriver();
+	protected void initAndroidDriver(String deviceName) {
+		this.getAndroidDriver = (AppiumDriver) driverClass.getAndroidDriver(deviceName);
 	}
 
 	public void quitAndroidDriver() {
