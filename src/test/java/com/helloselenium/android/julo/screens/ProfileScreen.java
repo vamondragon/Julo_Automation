@@ -577,9 +577,6 @@ public class ProfileScreen {
 
 		wait.until(ExpectedConditions.visibilityOf(mobileDriver.findElement(photoImageButton)));
 		AndroidActions.click((WebElement) mobileDriver.findElements(photoImageButton).get(1));
-		By cameraUploadOption = MobileBy.AndroidUIAutomator(ElementLocators.INSTANCE.get("cameraUploadOption"));
-		wait.until(ExpectedConditions.visibilityOf(mobileDriver.findElement(cameraUploadOption)));
-		AndroidActions.click(mobileDriver.findElement(cameraUploadOption));
 		wait.until(ExpectedConditions.visibilityOf(mobileDriver.findElement(takePictureButton)));
 		AndroidActions.click(mobileDriver.findElement(takePictureButton));
 		wait.until(ExpectedConditions.visibilityOf(mobileDriver.findElement(savePictureButton)));
@@ -598,20 +595,13 @@ public class ProfileScreen {
 		By photoImageButton = MobileBy.AndroidUIAutomator(ElementLocators.INSTANCE.get("photoImageButton"));
 		wait.until(ExpectedConditions.visibilityOf(mobileDriver.findElement(photoImageButton)));
 		AndroidActions.click((WebElement) mobileDriver.findElements(photoImageButton).get(0));
+		By cameraUploadOption = MobileBy.AndroidUIAutomator(ElementLocators.INSTANCE.get("cameraUploadOption"));
+		wait.until(ExpectedConditions.visibilityOf(mobileDriver.findElement(cameraUploadOption)));
+		AndroidActions.click(mobileDriver.findElement(cameraUploadOption));
 		By takePictureButton = MobileBy.AndroidUIAutomator(ElementLocators.INSTANCE.get("takePictureButton"));
 		wait.until(ExpectedConditions.visibilityOf(mobileDriver.findElement(takePictureButton)));
 		AndroidActions.click(mobileDriver.findElement(takePictureButton));
 		By savePictureButton = MobileBy.AndroidUIAutomator(ElementLocators.INSTANCE.get("savePictureButton"));
-		wait.until(ExpectedConditions.visibilityOf(mobileDriver.findElement(savePictureButton)));
-		AndroidActions.click(mobileDriver.findElement(savePictureButton));
-
-		wait.until(ExpectedConditions.visibilityOf(mobileDriver.findElement(photoImageButton)));
-		AndroidActions.click((WebElement) mobileDriver.findElements(photoImageButton).get(1));
-		By cameraUploadOption = MobileBy.AndroidUIAutomator(ElementLocators.INSTANCE.get("cameraUploadOption"));
-		wait.until(ExpectedConditions.visibilityOf(mobileDriver.findElement(cameraUploadOption)));
-		AndroidActions.click(mobileDriver.findElement(cameraUploadOption));
-		wait.until(ExpectedConditions.visibilityOf(mobileDriver.findElement(takePictureButton)));
-		AndroidActions.click(mobileDriver.findElement(takePictureButton));
 		wait.until(ExpectedConditions.visibilityOf(mobileDriver.findElement(savePictureButton)));
 		AndroidActions.click(mobileDriver.findElement(savePictureButton));
 
